@@ -13,20 +13,16 @@ import {
   List,
   ListItemButton,
   ListItemIcon,
-  ListItemText,
-  Toolbar,
-  ToolbarProps,
-  styled,
-  useTheme,
+  ListItemText, styled, Toolbar,
+  ToolbarProps, useTheme
 } from '@mui/material';
 // custom component
-import NameLogo from 'components/common/NameLogo';
 import ButtonLink from 'components/common/ButtonLink';
 import MenuToggler from 'components/common/MenuToggler';
+import NameLogo from 'components/common/NameLogo';
+import ComponentsContext from 'context/componentsContext';
 import ConstantsContext from 'context/constantsContext';
 import useOnClickOutside from 'hooks/useOnClickOutside';
-import ComponentsContext from 'context/componentsContext';
-import Projects from 'pages/projects';
 // type
 interface CustomAppBarProps {}
 
@@ -87,7 +83,7 @@ const CustomAppBar: React.FunctionComponent<CustomAppBarProps> = (props) => {
             <NameLogo
               bgColor="white"
               color="#383838"
-              name="john doe"
+              name="Augusto Lima"
               onClick={() => router.push('/')}
             />
             <LinkContainer sx={{ marginLeft: 'auto' }}>

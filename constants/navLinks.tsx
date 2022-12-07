@@ -3,11 +3,10 @@ import React from 'react';
 // mui icons
 import ConstructionIcon from '@mui/icons-material/Construction';
 import InfoIcon from '@mui/icons-material/Info';
-import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import WorkIcon from '@mui/icons-material/Work';
 import WorkspacesIcon from '@mui/icons-material/Workspaces';
 // type
-import { ButtonProps, IconProps } from '@mui/material';
+import { ButtonProps } from '@mui/material';
 export interface NavLink {
   buttonProps?: ButtonProps;
   href: string;
@@ -35,15 +34,15 @@ const navLinks: NavLink[] = [
     order: 2,
     sidebarVisible: false,
   },
-  {
-    buttonProps: { color: 'info' },
-    href: '/blog',
-    Icon: <TextSnippetIcon color="inherit" fontSize="inherit" />,
-    label: 'Blog',
-    order: 3,
-    sidebarOrder: 2,
-    sidebarVisible: true,
-  },
+  // {
+  //   buttonProps: { color: 'info' },
+  //   href: '/blog',
+  //   Icon: <TextSnippetIcon color="inherit" fontSize="inherit" />,
+  //   label: 'Blog',
+  //   order: 3,
+  //   sidebarOrder: 2,
+  //   sidebarVisible: true,
+  // },
   {
     buttonProps: { color: 'info', variant: 'contained' },
     href: '/projects',

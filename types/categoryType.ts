@@ -1,3 +1,3 @@
-export type BlogPostCategory = 'photography' | 'design';
+export type BlogPostCategory = 'frontend' | 'web development';
 
-export type ProjectCategory = 'photography' | 'design';
+export type ProjectCategory = 'frontend' | 'web development';

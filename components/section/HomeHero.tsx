@@ -6,8 +6,8 @@ import { useRouter } from 'next/router';
 import { Box, Typography, useTheme } from '@mui/material';
 // custom components
 import CenterBox from 'components/common/CenterBox';
-import TypingEffect from 'components/common/TypingEffect';
 import ScrollDown from 'components/common/ScrollDown';
+import TypingEffect from 'components/common/TypingEffect';
 // type
 interface HomeHeroProps {}
 
@@ -23,10 +23,10 @@ const HomeHero: React.FunctionComponent<HomeHeroProps> = (props) => {
         Hello, I&apos;m
       </Typography>
       <Typography component="h1" variant="h2" fontWeight="bold">
-        John Doe
+        Augusto Lima
       </Typography>
       <Box color="text.secondary">
-        <TypingEffect staticText="I am" text={['photographer', 'designer']} />
+        <TypingEffect staticText="I am" text={['software engineer', 'front-end developer']} />
       </Box>
       <ScrollDown
         color={info.main}

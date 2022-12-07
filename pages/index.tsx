@@ -1,11 +1,10 @@
 // react
 import * as React from 'react';
 // custom component
+import MainLayout from 'components/layout/MainLayout';
 import About from 'components/section/About';
 import HireMe from 'components/section/HireMe';
 import HomeHero from 'components/section/HomeHero';
-import MainLayout from 'components/layout/MainLayout';
-import RecentProjects from 'components/section/RecentProjects';
 import Skills from 'components/section/Skills';
 // custom context
 import ConstantsContext from 'context/constantsContext';
@@ -22,7 +21,6 @@ const Home: NextPage = () => {
         <About />
         <Skills />
         <HireMe />
-        <RecentProjects />
       </MainLayout>
     </>
   );

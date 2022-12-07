@@ -2,19 +2,12 @@
 import * as React from 'react';
 // @mui
 import {
-  Box,
-  BoxProps,
-  Card,
-  CardProps,
-  CardContent,
-  CardContentProps,
-  Typography,
-  styled,
+  Card, CardContent,
+  CardContentProps, CardProps, styled, Typography
 } from '@mui/material';
 // custom component
-import TextLink from 'components/common/TextLink';
-import FacebookIconLink from 'components/common/FacebookIconLink';
 import InstagramIconLink from 'components/common/InstagramIconLink';
+import TextLink from 'components/common/TextLink';
 import TwitterIconLink from 'components/common/TwitterIconLink';
 // custom context
 import ConstantsContext from 'context/constantsContext';
@@ -66,13 +59,12 @@ const Footer: React.FunctionComponent<FooterProps> = (props) => {
           ))}
         </CustomCardContent>
         <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-          <FacebookIconLink />
           <InstagramIconLink />
           <TwitterIconLink />
         </CardContent>
       </CustomCard>
       <Typography component="p" variant="body1" textAlign="center">
-        Made with ❤️ at <TextLink href="https://mopeim.com">mopeim</TextLink>
+        Made with ❤️ at Brazil
       </Typography>
     </>
   );

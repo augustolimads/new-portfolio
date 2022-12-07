@@ -1,27 +1,26 @@
 // react
-import * as React from 'react';
 // reading-time
 import readingTime from 'reading-time';
 // @mui
 import { Box, BoxProps, Grid, styled } from '@mui/material';
 // custom component
 import ContainerGrid from 'components/common/ContainerGrid';
-import Gallery from 'components/common/Gallery';
 import MainLayout from 'components/layout/MainLayout';
-import Markdown from 'components/common/Markdown';
 import ProjectDetails from 'components/section/ProjectDetails';
 // projects data
 import projectsData, { Project } from 'constants/projectsData';
 // custom lib
 import { getAllProjectsId, getProjectData } from 'lib/projects';
 // type
+import Container from '@mui/material/Container';
+import ProjectNotFound from 'components/section/ProjectNotFound';
 import type {
   GetStaticPaths,
   GetStaticProps,
   GetStaticPropsContext,
-  NextPage,
+  NextPage
 } from 'next';
-import ProjectNotFound from 'components/section/ProjectNotFound';
+import Image from 'next/image';
 
 interface ProjectPageProps {
   project?: string;
@@ -52,24 +51,27 @@ const ProjectPage: NextPage<ProjectPageProps> = (props) => {
   return (
     <>
       <MainLayout pageData={{ title: parsedProject.title }}>
-        <ProjectContainer>
-          <ContainerGrid>
-            <Grid item xs={12} md={8}>
-              <Gallery images={parsedProject.images} />
-            </Grid>
-            <Grid item xs>
-              <ProjectDetails
-                project={parsedProject}
-                readTime={Math.ceil(contentStats.minutes)}
-              />
-            </Grid>
-          </ContainerGrid>
-          <ContainerGrid>
-            <Grid item xs={12} md={8}>
-              <Markdown content={content} />
-            </Grid>
-          </ContainerGrid>
-        </ProjectContainer>
+        <Container>
+          <ProjectContainer>
+            <ContainerGrid>
+              <Grid item xs={12} md={8}>
+                <Box maxWidth="1000px">
+                  <Image
+                    layout="intrinsic"
+                    objectFit="contain"
+                    src={parsedProject.image}
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs>
+                <ProjectDetails
+                  project={parsedProject}
+                  readTime={Math.ceil(contentStats.minutes)}
+                />
+              </Grid>
+            </ContainerGrid>
+          </ProjectContainer>
+        </Container>
       </MainLayout>
     </>
   );

@@ -8,12 +8,8 @@ import { Box, Grid, Grow, Typography } from '@mui/material';
 import ContainerGrid from 'components/common/ContainerGrid';
 import TypingEffect from 'components/common/TypingEffect';
 // custom context
-import ConstantsContext from 'context/constantsContext';
 import ProjectCard from 'components/common/ProjectCard';
-import calcArrayOfObj from 'utility/calcArrayOfObj';
-import Filter, { FilterOption } from 'components/common/Filter';
-import sortArrayOfObj from 'utility/sortArrayOfObj';
-import { Project } from 'constants/projectsData';
+import ConstantsContext from 'context/constantsContext';
 // type
 interface ProjectsSectionProps {}
 
@@ -31,35 +27,6 @@ const ProjectsSection: React.FunctionComponent<ProjectsSectionProps> = (
     { label: 'Design' },
   ];
 
-  const handleFilterOptionClick = (option: FilterOption) => {
-    if (projectsToRender) {
-      const newProjectsArray: Project[] = Object.assign([], projects);
-
-      switch (option.label) {
-        case 'Most Recent':
-          sortArrayOfObj(newProjectsArray, 'date', 'desc');
-          setProjectsToRender(newProjectsArray);
-          break;
-        case 'Most Popular':
-          sortArrayOfObj(newProjectsArray, 'likes', 'desc');
-          setProjectsToRender(newProjectsArray);
-          break;
-        case 'Photography':
-          const photographyProjects = newProjectsArray.filter((project) =>
-            project.category.includes('photography')
-          );
-          setProjectsToRender(photographyProjects);
-          break;
-        case 'Design':
-          const designProjects = newProjectsArray.filter((project) =>
-            project.category.includes('design')
-          );
-          setProjectsToRender(designProjects);
-          break;
-      }
-    }
-  };
-
   return (
     <>
       <Typography
@@ -72,11 +39,10 @@ const ProjectsSection: React.FunctionComponent<ProjectsSectionProps> = (
       </Typography>
       <Box
         color="text.secondary"
-        sx={{ textAlign: 'center', marginTop: '1rem' }}
+        sx={{ textAlign: 'center', marginTop: '1rem', marginBottom: '2rem' }}
       >
-        <TypingEffect staticText="as a" text={['photographer', 'designer']} />
+        <TypingEffect staticText="as a" text={['software engineer', 'front-end developer']} />
       </Box>
-      <Filter onOptionClick={handleFilterOptionClick} options={options} />
       <ContainerGrid
         justifyContent={
           projectsToRender?.length === 1 ? 'center' : 'flex-start'
@@ -97,10 +63,9 @@ const ProjectsSection: React.FunctionComponent<ProjectsSectionProps> = (
               >
                 <Grid item xs={12} sm={6} md={4} xl={3}>
                   <ProjectCard
-                    imageAlt={project.images[0].alt}
-                    imageSrc={project.images[0].src}
+                    imageAlt={project.image.alt}
+                    imageSrc={project.image.src}
                     title={project.title}
-                    likes={calcArrayOfObj(project.images, 'likes')}
                     onButtonClick={() => router.push(`/projects/${project.id}`)}
                     sx={{
                       maxWidth: '21rem',

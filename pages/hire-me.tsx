@@ -3,13 +3,13 @@ import * as React from 'react';
 // @mui
 import { Box, BoxProps, Grid, styled, Typography } from '@mui/material';
 // custom component
-import ContactForm from 'components/common/ContactForm';
 import MainLayout from 'components/layout/MainLayout';
 // custom context
 import ConstantsContext from 'context/constantsContext';
 // type
-import type { NextPage } from 'next';
 import ContainerGrid from 'components/common/ContainerGrid';
+import TextLink from 'components/common/TextLink';
+import type { NextPage } from 'next';
 
 const CustomBox = styled(Box)<BoxProps>(({ theme }) => ({
   margin: '30% 1rem 5% 1rem',
@@ -32,13 +32,12 @@ const HireMe: NextPage = (props) => {
       <CustomBox>
         <ContainerGrid>
           <Grid
-            item
-            xs={12}
-            md={6}
+            item           
             alignItems="center"
             display="flex"
             flexDirection="column"
             justifyContent="center"
+            height='50vh'
           >
             <Box
               sx={{
@@ -49,19 +48,21 @@ const HireMe: NextPage = (props) => {
               }}
             >
               <Typography component="h2" variant="h4">
-                What can I do for you?
+                Contact Me
               </Typography>
               <Typography component="p" variant="body1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui,
-                laborum similique voluptas pariatur a doloremque facilis minima
-                quam dolores eveniet eaque aspernatur modi hic? Quod sunt in
-                recusandae adipisci possimus?
+                I'm happy to answer any questions about web development. Send me
+                an email and start a conversation, or reach out to me on
+                twitter.
+              </Typography>
+              <Typography component="address" variant="body1" mt={2}>
+                send me an email at <TextLink href="mailto:augustolimads@gmail.com">augustolimads@gmail.com</TextLink>
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6} display="flex" justifyContent="center">
+          {/* <Grid item xs={12} md={6} display="flex" justifyContent="center">
             <ContactForm />
-          </Grid>
+          </Grid> */}
         </ContainerGrid>
       </CustomBox>
     </MainLayout>

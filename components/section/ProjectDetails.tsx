@@ -5,10 +5,10 @@ import { Box, Typography } from '@mui/material';
 // dayjs
 import dayjs from 'dayjs';
 // type
-import { Project } from 'constants/projectsData';
 import CustomChip from 'components/common/CustomChip';
+import { ProjectDetails } from 'constants/projectsData';
 interface ProjectDetailsProps {
-  project: Project;
+  project: ProjectDetails;
   readTime?: number;
 }
 

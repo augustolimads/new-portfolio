@@ -9,22 +9,21 @@ import {
   Card,
   CardActions,
   CardActionsProps,
+  CardContent,
   CardProps,
+  Collapse,
   Grid,
   Skeleton,
-  Typography,
   styled,
-  CardContent,
-  Collapse,
+  Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material';
 // custom component
-import FacebookIconLink from 'components/common/FacebookIconLink';
-import InstagramIconLink from 'components/common/InstagramIconLink';
-import TwitterIconLink from 'components/common/TwitterIconLink';
 import ContainerGrid from 'components/common/ContainerGrid';
 import ExpandMoreIconButton from 'components/common/ExpandMoreIconButton';
+import InstagramIconLink from 'components/common/InstagramIconLink';
+import TwitterIconLink from 'components/common/TwitterIconLink';
 // type
 interface AboutProps {}
 
@@ -131,10 +130,10 @@ const About: React.FunctionComponent<AboutProps> = (props) => {
               </Typography>
               <CardContent>
                 <Typography component="p" variant="body1">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Dolorum exercitationem voluptate sapiente necessitatibus alias
-                  rerum voluptates accusamus tenetur, eaque natus possimus aut
-                  magni odio saepe eligendi laudantium. Enim, illo quod.
+                  I started my journey in the technology universe as an UI
+                  designer using Adobe XD and website development using
+                  Wordpress. My first contact with programming was with the
+                  Python language, in which I have great affection.
                 </Typography>
                 <Collapse
                   in={showMore}
@@ -147,14 +146,24 @@ const About: React.FunctionComponent<AboutProps> = (props) => {
                   unmountOnExit
                 >
                   <Typography component="p" variant="body1">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Sed quis, vitae ea repellendus pariatur nihil ad cupiditate
-                    minima et quasi laborum. Amet eius, aliquam impedit modi
-                    tempore doloribus iusto. Nobis nam, unde officia iusto
-                    repellat obcaecati temporibus recusandae corrupti odit
-                    voluptatem dolor est ullam ad eligendi eum, et molestiae.
-                    Possimus porro adipisci reiciendis corrupti dignissimos fuga
-                    aliquam aperiam quisquam praesentium.
+                    However, I decided to direct my career towards the
+                    Front-End, bringing together the skills of designer and
+                    programmer. After forming a good foundation with HTML, CSS
+                    and Javascript I chose ReactJS as the main technology
+                    ecosystem for its flexibility to work both in web systems
+                    with ReactJS and mobile applications with React Native. In
+                    my professional career I've worked on the creation of
+                    landing pages to web systems with various integrations,
+                    interactions and technologies; Since before the pandemic,
+                    I've worked as a semi-remote and I identified a lot with
+                    remote work. I enjoy working on building products and
+                    solutions that make people's lives easier. I aim to create
+                    simple, intuitive and attractive products. I'm currently
+                    focusing on specializing in React for both web platforms
+                    with NextJS and mobile with Native. Using clean code best
+                    practices, good architecture and unit tests using Jest,
+                    React Testing Library, and other technologies like
+                    Storybook.
                   </Typography>
                 </Collapse>
               </CardContent>
@@ -169,7 +178,6 @@ const About: React.FunctionComponent<AboutProps> = (props) => {
                   />
                 )}
                 <div>
-                  <FacebookIconLink />
                   <InstagramIconLink />
                   <TwitterIconLink />
                 </div>

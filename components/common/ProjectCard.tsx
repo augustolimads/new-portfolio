@@ -7,23 +7,11 @@ const Image = dynamic(() => import('next/image'));
 import {
   Box,
   BoxProps,
-  Card,
-  CardProps,
-  CardActions,
-  CardContent,
-  Icon,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Skeleton,
-  Typography,
-  styled,
-  useTheme,
+  Card, CardActions,
+  CardContent, CardProps, Skeleton, styled, Typography, useTheme
 } from '@mui/material';
 // @mui icons
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 // custom component
 import CustomButton from 'components/common/CustomButton';
 // type
@@ -31,7 +19,6 @@ interface ProjectCardProps extends CardProps {
   imageAlt: string;
   imageSrc: string;
   title: string;
-  likes: number;
   onButtonClick?: () => void;
 }
 
@@ -94,24 +81,6 @@ const ProjectCard: React.FunctionComponent<ProjectCardProps> = (props) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <List>
-          <ListItem>
-            <ListItemIcon sx={{ minWidth: 'auto', marginRight: '0.5rem' }}>
-              <Icon color="primary" sx={{ display: 'flex' }}>
-                <FavoriteIcon color="inherit" />
-              </Icon>
-            </ListItemIcon>
-            <ListItemText>
-              {isLoaded ? (
-                likes
-              ) : (
-                <Skeleton
-                  sx={{ backgroundColor: primary.main, width: '2rem' }}
-                />
-              )}
-            </ListItemText>
-          </ListItem>
-        </List>
         <CustomButton
           disableRipple
           variant="text"

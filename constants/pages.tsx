@@ -10,14 +10,14 @@ export interface Pages {
 
 const pages: Pages = {
   home: {
-    title: 'John Doe',
+    title: 'Augusto Lima',
     description:
-      'theBag is a multipurpose template made by Nextjs and MUI v5 which can be used for Portfolios, Resumes, CVs, and Personal websites.',
+      'My portfolio maded with Nextjs and MUI v5, based on the bag template.',
   },
   projects: {
     title: 'Projects',
     description:
-      'You can see all my projects as a designer and photographer in this page.',
+      'You can see all my projects as a developer in this page.',
   },
   hireMe: {
     title: 'Hire me',

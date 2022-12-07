@@ -4,7 +4,7 @@ import * as React from 'react';
 import dynamic from 'next/dynamic';
 const Image = dynamic(() => import('next/image'));
 // @mui
-import { Grid, GridProps, Skeleton, Typography, styled } from '@mui/material';
+import { Grid, GridProps, Skeleton, styled, Typography } from '@mui/material';
 import ButtonLink from 'components/common/ButtonLink';
 // custom component
 const CustomButton = dynamic(() => import('components/common/CustomButton'));
@@ -58,7 +58,7 @@ const HireMe: React.FunctionComponent<HireMeProps> = (props) => {
             height={600}
             loading="lazy"
             onLoad={() => setIsLoaded(true)}
-            src="/sections/freelancer-male.svg"
+            src="/sections/augusto-lima-freela.svg"
             width={600}
           />
           {!isLoaded && (

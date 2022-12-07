@@ -6,16 +6,17 @@ import {
   ContainerProps,
   Grid,
   GridProps,
-  Typography,
   styled,
+  Typography
 } from '@mui/material';
+//icons
+import { ImHtmlFive } from 'react-icons/im';
+import { RiReactjsLine } from 'react-icons/ri';
+import { SiChakraui } from 'react-icons/si';
 // custom component
 import ContainerGrid from 'components/common/ContainerGrid';
 import SkillProgress from 'components/common/SkillProgress';
 // custom icons
-import IllustratorCCIcon from 'components/icon/IllustratorCC';
-import LightroomCCIcon from 'components/icon/LightroomCC';
-import PhotoshopIcon from 'components/icon/Photoshop';
 // context
 import ComponentsContext from 'context/componentsContext';
 // type
@@ -39,29 +40,19 @@ const Skills: React.FunctionComponent<SkillsProps> = (props) => {
 
   const skills = [
     {
-      Icon: (
-        <PhotoshopIcon bgColor="white" textColor="tomato" fontSize="large" />
-      ),
-      title: 'Photoshop',
-      progressValue: 78,
+      Icon: <ImHtmlFive size={32} />,
+      title: 'HTML/CSS/JS/TS',
+      progressValue: 100,
     },
     {
-      Icon: (
-        <LightroomCCIcon bgColor="white" textColor="tomato" fontSize="large" />
-      ),
-      title: 'Lightroom',
-      progressValue: 83,
+      Icon: <RiReactjsLine size={32} />,
+      title: 'ReactJS/Nextjs',
+      progressValue: 100,
     },
     {
-      Icon: (
-        <IllustratorCCIcon
-          bgColor="white"
-          textColor="tomato"
-          fontSize="large"
-        />
-      ),
-      title: 'Illustrator',
-      progressValue: 97,
+      Icon: <SiChakraui size={32} />,
+      title: 'Chakra UI/Tailwind',
+      progressValue: 100,
     },
   ];
 
@@ -84,7 +75,7 @@ const Skills: React.FunctionComponent<SkillsProps> = (props) => {
                 size={100}
                 value={skill.progressValue}
                 Icon={skill.Icon}
-                subtitle={`${skill.title} | ${skill.progressValue}%`}
+                subtitle={`${skill.title}`}
               />
             </CustomGridItem>
           ))}

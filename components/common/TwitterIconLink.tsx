@@ -27,7 +27,7 @@ const TwitterIconLink: React.FunctionComponent<TwitterIconLinkProps> = (
 ) => {
   const {
     anchorStyles,
-    href = '#',
+    href = 'https://twitter.com/augustolimads',
     iconColor = 'inherit',
     iconSize = 'inherit',
     ...otherProps
